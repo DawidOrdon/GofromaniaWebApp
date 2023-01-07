@@ -1,0 +1,13 @@
+﻿@model IEnumerable<GofromaniaWebApp.Models.Opinie>
+
+<div class="row text-center">
+@foreach (var item in Model) {
+        <div class="col-sm-3" style="border: 1px solid black">
+                <h4>@Html.DisplayFor(modelItem => item.Autor)</h4><br />
+                <h4>@Html.DisplayFor(modelItem => item.Ocena) / 5</h4><br />
+                <h6>@Html.DisplayFor(modelItem => item.Opinia)</h6>
+
+        </div>
+}
+</div>
+
