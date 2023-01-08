@@ -9,7 +9,7 @@
         public string Autor { get; set; }
         public string Ip { get; set; }
         public bool Aktwyne { get; set; }
-        public int Admin { get; set; }
+        public string Admin { get; set; }
         public Opinie()
         {
 

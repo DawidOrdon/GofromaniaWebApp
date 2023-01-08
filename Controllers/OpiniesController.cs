@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using GofromaniaWebApp.Data;
 using GofromaniaWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace GofromaniaWebApp.Controllers
 {
@@ -78,6 +79,10 @@ namespace GofromaniaWebApp.Controllers
         [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
+            var userId = User.FindFirstValue(ClaimTypes.Name);
+            ViewBag.userid = userId;
+
+
             if (id == null || _context.Opinie == null)
             {
                 return NotFound();
