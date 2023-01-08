@@ -21,6 +21,7 @@ namespace GofromaniaWebApp.Controllers
         }
 
         // GET: Opinies
+        
         public async Task<IActionResult> Index()
         {
               return View(await _context.Opinie.ToListAsync());
@@ -29,7 +30,6 @@ namespace GofromaniaWebApp.Controllers
         // POST: Active Opinies
         public async Task<IActionResult> ActiveOpinies()
         {
-            ViewBag.Name = "test";
             return View(await _context.Opinie.Where(j => j.Aktwyne.Equals(true)).ToListAsync());
         }
 
@@ -69,7 +69,7 @@ namespace GofromaniaWebApp.Controllers
             {
                 _context.Add(opinie);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ActiveOpinies));
             }
             return View(opinie);
         }

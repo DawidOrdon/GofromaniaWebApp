@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+.gallery-img
+{
+    padding:20px;
+}
+.przycisk {
+    border-radius: 20px;
+    background-color: #ff94a6;
+    color:white;
+    padding:10px;
+    text-align:center;
+}
